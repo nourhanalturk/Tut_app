@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tut_app/presentation/resources/routs_manager.dart';
+import '../presentation/resources/theme_manager.dart';
 
 class MyApp extends StatefulWidget {
   //const MyApp({Key? key}) : super(key: key);  Because we need only single instance to prevent all classes from creating an instance
@@ -16,8 +18,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: RoutGenerator.getRout,
+      initialRoute: Routs.splashRout,
+      theme: getApplicationTheme(),
+
+    );
   }
+
 }
