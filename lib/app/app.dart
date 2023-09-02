@@ -9,7 +9,7 @@ class MyApp extends StatefulWidget {
   MyApp._internal();
   static final MyApp _instance = MyApp._internal(); // single instance
 
-  // by using factory we can determine witch instance we need and return the single instance
+  // by using factory we can determine witch instance we need and return a single instance
   //if i have a var here and in another class i update the value of it and in another class try to print this value the same value will been printed beacuse its the same instance the another class dosent create a new instance its only one
   factory MyApp()=>_instance ;
 
