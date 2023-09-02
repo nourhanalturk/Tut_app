@@ -1,7 +1,7 @@
 
 import 'package:tut_app/app/constants.dart';
 import 'package:tut_app/app/extentions.dart';
-import 'package:tut_app/domain/models.dart';
+import 'package:tut_app/domain/model/models.dart';
 
 import '../response/response.dart';
 
