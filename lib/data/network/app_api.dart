@@ -13,6 +13,5 @@ abstract class AppServiceClient {
   Future<AuthenticationResponse> login (
       @Field("email") String email,
       @Field("password") String password,
-
       );
 }
