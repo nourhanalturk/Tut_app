@@ -3,7 +3,7 @@ import 'package:tut_app/data/network/requestes.dart';
 import 'package:tut_app/data/response/response.dart';
 
 import '../network/app_api.dart';
-
+// it used to call the app service client
 abstract class RemoteDataSource {
  Future<AuthenticationResponse> login(LoginRequest loginRequest);
 }

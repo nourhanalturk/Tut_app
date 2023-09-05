@@ -10,7 +10,7 @@ import 'package:tut_app/domain/repository/repository.dart';
 import '../network/network_info.dart';
 
 class RepositoryImpl implements Repository{
-  final RemoteDataSource _remoteDataSource;
+  final RemoteDataSource _remoteDataSource ;
   final NetworkInfo _networkInfo;
   RepositoryImpl(this._networkInfo,this._remoteDataSource);
 
@@ -21,6 +21,7 @@ class RepositoryImpl implements Repository{
 
       try{
         final response = await  _remoteDataSource.login(loginRequest);
+
         if(response.status ==ApiInternalStatus.SUCCESS){
           //success
           //return either right
