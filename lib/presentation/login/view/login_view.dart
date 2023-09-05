@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:tut_app/app/di.dart';
 import 'package:tut_app/domain/usecase/login_usecase.dart';
 import 'package:tut_app/presentation/login/view_modwl/login_view_model.dart';
 import 'package:tut_app/presentation/resources/color_manager.dart';
@@ -17,7 +18,7 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  final LoginViewModel _viewModel = LoginViewModel(LoginUseCase());
+  final LoginViewModel _viewModel = instance<LoginViewModel>();
   final TextEditingController _userNameController =TextEditingController();
   final TextEditingController _userPasswordController =TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -37,7 +38,7 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return _getContentWidget();
   }
   Widget _getContentWidget (){
     return Scaffold(
