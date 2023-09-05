@@ -8,6 +8,7 @@ class ErrorHandler implements Exception {
   ErrorHandler.handler(dynamic error){
   if (error is DioError){
     // dio error so its an error from response of the API ,or its from dio itself
+    print("dio error============================");
     failure= _handlerError (error);
   }else{
     //default error
@@ -28,6 +29,7 @@ Failure _handlerError(DioError error) {
       if (error.response != null &&
           error.response?.statusCode != null &&
           error.response?.statusMessage != null) {
+        print("failed");
         return Failure(
           error.response?.statusCode ?? 0,
           error.response?.statusMessage ?? "",
@@ -37,6 +39,10 @@ Failure _handlerError(DioError error) {
       }
     case DioErrorType.cancel:
       return DataSource.CANCEL.getFailure();
+    case DioErrorType.unknown:
+    // Handle other or unknown errors here.
+      print("Unknown error: ${error.message}");
+      return Failure(0, "Unknown error: ${error.message}");
     default:
       return DataSource.DEFAULT.getFailure();
   }
